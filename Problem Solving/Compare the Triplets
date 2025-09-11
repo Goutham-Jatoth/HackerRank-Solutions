@@ -1,0 +1,44 @@
+
+#include <stdio.h>
+
+void compareTriplets(int a_count, int a[], int b_count, int b[], int result_count[]) {
+    
+    for (int i = 0; i < 3; i++) {
+        if (a[i] > b[i]) {
+            a_count++;
+        } else if (b[i] > a[i]) {
+            b_count++;
+        }
+    }
+    
+    for (int i = 0; i < 2; i++) {
+        result_count[i] = (i == 0) ? a_count : b_count;
+    }
+
+    printf("%d ", result_count[0]);
+    printf("%d", result_count[1]);
+
+}
+
+void fillVectors(int a[], int b[]) {
+    for (int i = 0; i < 3; i++) {
+         scanf("%d", &a[i]);
+    }
+    
+    for (int i = 0; i < 3; i++) {
+        scanf("%d", &b[i]);
+    }
+}
+
+int main() {
+    
+    int a_count = 0, a[3], b_count = 0, b[3], result_count[2];
+        
+    fillVectors(a, b); 
+    compareTriplets(a_count, a, b_count, b, result_count);
+
+    
+    
+
+    return 0;
+}
