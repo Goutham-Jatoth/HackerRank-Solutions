@@ -1,0 +1,17 @@
+
+def plusMinus(arr):
+    pos =0
+    neg =0
+    zero =0
+    for x in arr:
+        try:
+         y = math.sqrt(x)
+         if y==0.0:
+               zero+=1 
+         else:
+             pos+=1
+        except ValueError:
+            neg+=1
+    print(f"{pos/len(arr):.6f}")
+    print(f"{neg/len(arr):.6f}")
+    print(f"{zero/len(arr):.6f}")
