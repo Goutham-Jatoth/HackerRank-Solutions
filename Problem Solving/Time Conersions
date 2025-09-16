@@ -1,0 +1,85 @@
+def timeConversion(s):
+    hour = int(s[:2])
+    minute = s[3:5]
+    second = s[6:8]
+    am_pm = s[8:]
+
+    if am_pm == "AM":
+        if hour == 12:
+            print(f"0{hour - 12}:{minute}:{second}")
+        else:
+            print(f"0{hour}:{minute}:{second}")
+
+    elif am_pm == "PM":
+        if hour == 12:
+            print(f"{hour}:{minute}:{second}")
+        else:
+            print(f"{hour + 12}:{minute}:{second}")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class Result {
+
+    /*
+     * Complete the 'timeConversion' function below.
+     *
+     * The function is expected to return a STRING.
+     * The function accepts STRING s as parameter.
+     */
+
+    public static String timeConversion(String s) {
+    String meridiem = s.substring(8);
+    int hours = Integer.parseInt(s.substring(0, 2));
+    String colonsMinutesAndSeconds = s.substring(2, 8);
+
+    if (meridiem.equals("AM") && hours == 12) {
+        hours = 0;
+    } else if (meridiem.equals("PM") && hours != 12) {
+        hours += 12;
+    }
+
+    return String.format("%02d%s", hours, colonsMinutesAndSeconds);
+}
+    
+    
+    
+    
+    
+    
+    
+    }
+
+
+
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+
+        String s = bufferedReader.readLine();
+
+        String result = Result.timeConversion(s);
+
+        bufferedWriter.write(result);
+        bufferedWriter.newLine();
+
+        bufferedReader.close();
+        bufferedWriter.close();
+    }
+}
