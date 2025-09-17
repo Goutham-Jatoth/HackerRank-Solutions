@@ -1,0 +1,8 @@
+class MyRegex{
+    String from0to199 = "[0-1]?[0-9]?[0-9]";
+    String from200to249 = "2[0-4][0-9]";
+    String from250to255 = "25[0-5]";
+    String from0to255 = "(" + from0to199 + "|" + from200to249 + "|" + from250to255 + ")";
+    String dot = "\\.";
+    String pattern = from0to255 + dot + from0to255 + dot + from0to255 + dot + from0to255;
+}
