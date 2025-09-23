@@ -1,0 +1,33 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int amountContacts = sc.nextInt();
+        sc.nextLine();
+        
+        HashMap<String, Integer>  listContacts = new HashMap<String, Integer>();
+        
+        for (int i = 0; i < amountContacts; i++) {
+            String key = sc.nextLine();
+            int value = sc.nextInt();
+            sc.nextLine();
+            listContacts.put(key, value);
+        }
+
+        while (sc.hasNext()) {
+            String nombre = sc.nextLine();
+            if (!listContacts.containsKey(nombre)){
+            
+            System.out.println("Not found");
+            
+            }
+            else{
+                System.out.println(nombre+"="+listContacts.get(nombre));
+            }
+        }
+        
+}
+}
