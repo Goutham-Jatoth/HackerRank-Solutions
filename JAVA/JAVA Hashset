@@ -1,0 +1,10 @@
+HashSet<String> pairs = new HashSet<>();
+        
+        for(int i = 0 ; i < t; i++){
+            String str = pair_left[i] + " " + pair_right[i];
+            String rev = pair_right[i] + " " + pair_left[i];
+            if(!pairs.contains(rev)){
+                pairs.add(str);
+            }
+            System.out.println(pairs.size());
+        }
