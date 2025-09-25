@@ -1,0 +1,18 @@
+public static String dayOfProgrammer(int year) {
+
+// 256 day in common year is 13
+
+int day = 13;
+
+// Condition for checking leap year in both calender 
+
+if((year % 4==0) && ((year < 1918) || (year % 100)!=0 || (year % 400==0))) 
+     day--;
+
+// 13(lost) + 13(256 - 243) = 26  1918 not leap year
+
+if(year == 1918 )
+     day = 26;
+
+return day+".09."+year;
+}
