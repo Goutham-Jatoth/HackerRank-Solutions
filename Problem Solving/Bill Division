@@ -1,0 +1,11 @@
+def bonAppetit(bill, k, b):
+    # Write your code here
+    actual=0
+    for i in bill:
+        actual=actual+i
+    actual-=bill[k]
+    actual=actual//2
+    if b==actual:
+        print("Bon Appetit")
+    else:
+        print(b-actual)
