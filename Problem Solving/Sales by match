@@ -1,0 +1,10 @@
+public static int sockMerchant(int n, List<Integer> ar) {
+    Set<Integer> unique = new HashSet<>(ar);
+
+    int pairs = 0;
+    for(Integer i : unique){
+        Integer frequency = Collections.frequency(ar, i);
+        pairs = pairs + (frequency / 2);
+    }
+    return pairs;
+}
