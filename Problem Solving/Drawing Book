@@ -1,0 +1,7 @@
+public static int pageCount(int n, int p) {
+        int totalFaces = 1 + (n-1)/2 + (n-1) % 2; // a face is the left the right page
+        int forwardTurns = p/2;
+        int reverseTurns = (totalFaces-1) - forwardTurns; //totalFaces-1 is the index of the last face; the first face's index is 0
+
+        return Math.min(forwardTurns, reverseTurns);
+}
