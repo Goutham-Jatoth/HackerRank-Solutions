@@ -1,0 +1,36 @@
+import java.util.ArrayDeque;
+import java.util.Deque;
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Set;
+
+public class Solution {
+
+    public static void main(String[] args) {
+		Deque<String> deque = new ArrayDeque<>();
+		Scanner sc = new Scanner(System.in);
+		String input = sc.nextLine();
+		String[] str = input.split(" ");
+		int size = Integer.valueOf(str[0]);
+		String s = sc.nextLine();
+		sc.close();
+		String[] s2 = s.split(" ");
+		Set<String> set = new HashSet<>();
+		int max = 0;
+		for (int str1 = 0; str1 < Integer.valueOf(str[1]); str1++) {
+			deque.offerLast(s2[str1]);
+		}
+		set.addAll(deque);
+		max = set.size();
+		
+		for (int i = Integer.valueOf(str[1]) + 1; i < size; i++) {
+			deque.pollFirst();
+			deque.offerLast(s2[i]);
+			set.clear();
+			set.addAll(deque);
+			max = Math.max(max, set.size());
+		}
+		
+		System.out.println(max);
+	}
+}
