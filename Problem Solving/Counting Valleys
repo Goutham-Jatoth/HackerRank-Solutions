@@ -1,0 +1,28 @@
+public static int countingValleys(int steps, String path) {
+        // Write your code here
+        int difference = 0;
+        boolean isValley = false;
+        int count = 0;
+        
+        for (int i = 0; i < path.length(); i++) {
+            if (difference == 0 && isValley) {
+                count++;
+            }
+            if (path.charAt(i) == 'U') {
+                if (difference == 0) {
+                    isValley = false;
+                }
+                difference++;
+            } else {
+                if (difference == 0) {
+                    isValley = true;
+                }
+                difference--;
+            }
+        }
+        
+        if (isValley && difference == 0) {
+            count++;
+        }
+        return count;
+    }
