@@ -1,0 +1,11 @@
+def catAndMouse(x, y, z):
+    
+    min_catA = (z-x)**2
+    min_catB = (z-y)**2 
+    
+    if min_catA > min_catB : 
+        return "Cat B"
+    elif min_catB > min_catA:
+        return "Cat A"
+    else : 
+        return "Mouse C"
