@@ -1,0 +1,9 @@
+def designerPdfViewer(h, word):
+    # Write your code here
+    w = "abcdefghijklmnopqrstuvwxyz"
+    r = 0 
+    for i in word:
+        a = w.index(i)
+        if r < h[a]:
+            r = h[a]
+    return r*(len(word))
