@@ -1,0 +1,2 @@
+int result = Collections.max(height) - k;
+    return result > 0 ? result : 0; 
