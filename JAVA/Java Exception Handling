@@ -1,0 +1,19 @@
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        try {
+            int x = sc.nextInt(), y = sc.nextInt(); 
+            System.out.println(x / y); 
+        } catch(InputMismatchException exc) {
+            System.out.println(exc.getClass().getName());
+        } catch(ArithmeticException exc) {
+            System.out.println(exc.getClass().getName() + ": " + exc.getMessage());
+        }
+        finally {
+            sc.close();
+        }
+        
+    }
+}
