@@ -1,0 +1,6 @@
+c = 0
+for n in range(i,j+1):
+    a = int(str(n)[::-1])
+    if abs(n-a)%k == 0:
+        c += 1 
+return c  
