@@ -1,0 +1,10 @@
+def swap(arr):
+    el = arr.pop(-1)
+    arr.insert(0, el)
+    return arr
+
+def circularArrayRotation(a, k, queries):
+    for i in range(k%len(a)):
+        a = swap(a)
+        
+    return [a[x] for x in queries]
