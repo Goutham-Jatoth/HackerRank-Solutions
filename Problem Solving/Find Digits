@@ -1,0 +1,11 @@
+def findDigits(Num:int):
+    numbers = list(str(Num))
+    count = 0
+    
+    for num in numbers:
+        num = int(num)
+        if num == 0:
+            continue
+        elif Num % num == 0:
+            count += 1
+    return count
