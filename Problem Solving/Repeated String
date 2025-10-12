@@ -1,0 +1,4 @@
+def repeatedString(s, n):
+    c = s.count("a")
+    l = len(s)
+    return c*(n//l) + s[:n%l].count("a")
