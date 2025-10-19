@@ -1,0 +1,7 @@
+def cutTheSticks(arr):
+    c = []
+    while arr:
+        c.append(len(arr))
+        m = min(arr)
+        arr = [i for i in arr if i != m ]
+    return c 
