@@ -1,0 +1,14 @@
+public static int squares(int a, int b) {
+    int startVal = (int)Math.sqrt(a);
+    int endVal = (int)Math.sqrt(b);
+    int sqrtcount = 0;
+
+    for(int i=startVal ; i<=endVal ; i++) {
+        int square = i*i;
+        if(square>=a && square<=b) {
+            sqrtcount++;
+        }
+    }
+
+    return sqrtcount;
+}
