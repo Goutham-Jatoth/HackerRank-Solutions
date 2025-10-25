@@ -1,0 +1,11 @@
+def equalizeArray(arr:list):
+    lenght = len(arr)
+    frequency = {}
+    for num in arr:
+        if num not in frequency:
+            frequency[num] = 1
+        else:
+            frequency[num] += 1
+    
+
+    return abs(max(frequency.values()) - lenght)
