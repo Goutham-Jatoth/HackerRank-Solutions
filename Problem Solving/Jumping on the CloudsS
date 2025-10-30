@@ -1,0 +1,12 @@
+def jumpingOnClouds(c, k):
+    e=100
+    position=0
+    for i in range(0,len(c)):
+        position = (position+k)%len(c) 
+        e=e-1
+        if c[position] == 1 :
+            e=e-2 # 1 for the jump and one for the energy down
+        print(e,position,c[position])
+        if position == 0:
+            break
+    return e
