@@ -1,0 +1,7 @@
+def extraLongFactorials(n):
+    mult=1
+    # Write your code here
+    while n!=1:
+        mult*=n
+        n=n-1
+    print(mult)
