@@ -1,0 +1,9 @@
+def beautifulTriplets(d, arr):
+    # Write your code here
+    c = 0 
+    for i in range(len(arr)-2):
+        x = [arr[i],arr[i]+d,arr[i]+(d*2)]
+        y = [True if j in arr else False for j in x ]
+        if all(y):
+            c += 1
+    return c
