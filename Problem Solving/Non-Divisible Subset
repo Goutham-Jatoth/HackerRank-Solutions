@@ -1,0 +1,21 @@
+def nonDivisibleSubset(k, s):
+    s_mod = [x % k for x in s]
+    print(s_mod)
+    s_count = 0
+    for i in range(0, ((k // 2)+1)):
+        c1 = s_mod.count(i)
+        c2 = s_mod.count(k-i)
+        if c1 > 0 or c2 > 0 :
+            if i == 0:
+                max_cnt_num = 1
+            elif k/2 == i:
+                max_cnt_num = 1
+            else:
+                max_cnt_num = max(c1,c2)
+        else:
+            max_cnt_num = 0
+        print("MAX_CNT_NUM : ",max_cnt_num)
+        s_count += max_cnt_num
+        print("COUNT : ",s_count,'\n')
+    print(s_count)
+    return(int(s_count))
