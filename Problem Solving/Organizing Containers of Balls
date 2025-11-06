@@ -1,0 +1,14 @@
+def organizingContainers(container):
+    # Write your code here
+    n = len(container)
+    capacity = []
+    type_count = []
+    for i in range(n):
+        capacity.append(sum(container[i]))
+        current_total = 0
+        for j in range(n):
+            current_total += container[j][i]
+            
+        type_count.append(current_total)
+                  
+    return "Possible" if sorted(capacity) == sorted(type_count) else "Impossible"
