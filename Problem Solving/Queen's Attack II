@@ -1,0 +1,18 @@
+def queensAttack(n, k, r_q, c_q, obstacles):
+    attacked = 0
+    pos = [[r_q, c_q] for position in range(8)]
+    moves = [(i, j) for i in range(-1, 2) for j in range(-1, 2)]
+    moves.remove((0, 0))
+    obstacles = set(tuple(obstacle) for obstacle in obstacles)
+    for move in range(len(moves)):
+        while True:
+            pos[move][0] += moves[move][0]
+            pos[move][1] += moves[move][1]
+            if not 1 <= pos[move][0] <= n:
+                break
+            if not 1 <= pos[move][1] <= n:
+                break
+            if (pos[move][0], pos[move][1]) in obstacles:
+                break
+            attacked += 1
+    return attacked
